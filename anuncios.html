@@ -1,0 +1,24 @@
+<div class="pages">
+	<div data-page="inicio" class="page no-toolbar no-navbar">
+		<div class="page-content">
+			<div class="navbarpages graybg">
+				<div class="navbar_center"></div>
+
+				<form id="busca_anuncio" style="display:none" onsubmit="click_busca(this); return false;">
+					<input type="text" name="search" id="search" class="input_busca" placeholder="Buscar">
+				</form>
+
+				<a href="#" onclick="toogleSearch(this)">
+					<div class="navbar_right"><img src="images/icons/white/busca_menu.png" alt="" title="" /></div>
+				</a>
+			</div>
+			<div id="pages_maincontent">
+				<div class="page_single layout_fullwidth_padding">
+					<div class="list-block">
+						<ul class="posts"></ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

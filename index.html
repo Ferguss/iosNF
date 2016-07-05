@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="white">
+	<link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+	<link href="images/apple-touch-startup-image-320x460.png" media="(device-width: 320px)" rel="apple-touch-startup-image">
+	<link href="images/apple-touch-startup-image-640x920.png" media="(device-width: 320px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
+
+	<!-- { Inicio javascript do aplicativo -->
+	<script src="js/app/constantes.js"></script>
+	<script src="js/app/user.js"></script>
+	<script src="js/app/funcoes.js"></script>
+	<script src="js/app/home.js"></script>
+	<!-- Fim javascript do aplicativo } -->
+
+	<title>APP - Negócio Fechado</title>
+	<link rel="stylesheet" href="css/framework7.css">
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="css/swipebox.css">
+	<link rel='stylesheet' href="css/style-app.css">
+</head>
+<body id="mobile_wrap">
+	<div class="panel-overlay"></div>
+	<div class="panel panel-left panel-reveal">
+		<div class="view view-subnav">
+			<div class="pages">
+				<div data-page="panel-leftmenu" class="page pagepanel">
+					<div class="page-content">
+						<nav class="main-nav icons_31">
+							<ul>
+								<li>
+									<a href="index.html" class="close-panel" data-view=".view-main"><img src="images/icons/white/home.png" alt="" title="" /><span>Anúncios</span></a>
+								</li>
+								<!-- <li> -->
+									<!-- <a href="index.html" class="close-panel" data-view=".view-main"><img src="images/icons/white/features.png" alt="" title="" /><span>Destaque</span></a> -->
+								<!-- </li> -->
+								<li>
+									<a href="#" data-popup=".popup-login" class="open-popup close-panel" id="app_login_popup"><img src="images/icons/white/lock.png" alt="" title="" /><span>Login</span></a>
+								</li>
+								<!-- <li> -->
+									<!-- <a href="anuncios.html" class="close-panel" data-view=".view-main"><img src="images/icons/white/blog.png" alt="" title="" /><span>Blog</span></a> -->
+								<!-- </li> -->
+								<!-- <li> -->
+									<!-- <a href="shop.html" class="close-panel" data-view=".view-main"><img src="images/icons/white/shop.png" alt="" title="" /><span>Shop</span></a> -->
+								<!-- </li> -->
+								<li class="subnav">
+									<a href="categorias.html"><img src="images/icons/white/categories.png" alt="" title="" /><span>Categorias</span></a>
+								</li>
+								<!-- <li> -->
+									<!-- <a href="cart.html" class="close-panel" data-view=".view-main"><img src="images/icons/white/cart.png" alt="" title="" /><span>Cart</span></a> -->
+								<!-- </li> -->
+								<!-- <li> -->
+									<!-- <a href="tables.html" class="close-panel" data-view=".view-main"><img src="images/icons/white/tables.png" alt="" title="" /><span>Tables</span></a> -->
+								<!-- </li> -->
+								<!-- <li> -->
+									<!-- <a href="form.html" class="close-panel" data-view=".view-main"><img src="images/icons/white/form.png" alt="" title="" /><span>Forms</span></a> -->
+								<!-- </li> -->
+								<li>
+									<a href="contato.html" class="close-panel" data-view=".view-main"><img src="images/icons/white/contact.png" alt="" title="" /><span>Contato</span></a>
+								</li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="panel panel-right panel-reveal">
+		<div class="user_login_info">
+			<div class="user_thumb">
+				<img src="images/page_photo.jpg" alt="" title="" />
+				<div class="user_details">
+					<p>Olá, <span>Caro Usuário</span></p>
+				</div>
+				<div class="user_avatar"><img src="images/avatar.jpg" alt="" title="" /></div>
+			</div>
+			<nav class="user-nav">
+				<ul>
+					<li>
+						<a href="elementos.html" class="close-panel"><img src="images/icons/white/settings.png" alt="" title="" /><span>Configurações</span></a>
+					</li>
+					<li>
+						<a href="elementos.html" class="close-panel"><img src="images/icons/white/briefcase.png" alt="" title="" /><span>Minha Conta</span></a>
+					</li>
+					<li>
+						<a href="elementos.html" class="close-panel"><img src="images/icons/white/message.png" alt="" title="" /><span>Mensagens</span><strong>12</strong></a>
+					</li>
+					<li>
+						<a href="elementos.html" class="close-panel"><img src="images/icons/white/love.png" alt="" title="" /><span>Favoritos</span><strong>5</strong></a>
+					</li>
+					<li>
+						<a href="index.html" class="close-panel"><img src="images/icons/white/lock.png" alt="" title="" /><span>Sair</span></a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+	<div class="views">
+		<div class="view view-main">
+			<div class="pages">
+				<div data-page="index" class="page homepage">
+					<div class="page-content">
+						<div class="navbarpages nobg">
+							<!--REMOVIDO O-->
+							<!---  <a href="#" data-panel="left" class="open-panel">
+								<div class="navbar_left"><img src="images/icons/white/menu.png" alt="" title="" /></div>
+								</a>-->		
+							<div class="navbar_center">
+								<!---LOGO REMOVIDO-->
+								<!-- <div class="logo_image"><a href="index.html"><img src="" alt="" title=""/></div>-->
+							</div>
+
+							<form id="busca_anuncio" class="search_close" onsubmit="click_busca(this); return false">
+								<input type="search" name="search" id="search" class="input_busca" placeholder="Buscar">
+							</form>
+
+							<a href="#" onclick="toogleSearch(this)">
+								<div class="navbar_right"><img src="images/icons/white/busca_menu.png" alt="" title="" /></div>
+							</a>
+						</div>
+						<!-- INICIO DA LISTA DE ANUNCIOS NA HOME -->
+						<div class="pages">
+							<div data-page="inicio" class="page no-toolbar no-navbar">
+								<div class="page-content">
+									<!--REMOVIDO DAQUI OPCOES DE IMAGENS E MENU PARALELO-->
+									<div id="pages_maincontent">
+										<div class="page_single layout_fullwidth_padding">
+											<div class="list-block">
+												<ul class="posts"></ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--INICIO MENU BOTON -->
+					<div class="swiper-container-toolbar swiper-toolbar swiper-init" data-effect="slide" data-slides-per-view="4" data-slides-per-group="4" data-space-between="0" data-pagination=".swiper-pagination-toolbar">
+						<!-- <div class="swiper-pagination-toolbar"></div>-->
+						<div class="swiper-wrapper">
+							<div class="swiper-slide toolbar-icon">
+								<a href="#" data-panel="left" class="open-panel"><img src="images/icons/white/menu.png" alt="" title="" /></a>
+							</div>
+							<div class="swiper-slide toolbar-icon">
+								<a href="index.html" data-view=".view-main"><img src="images/icons/white/home.png" alt="" title="" /></a>
+							</div>
+							<div class="swiper-slide toolbar-icon">
+								<a href="#" data-panel="right" class="open-panel"><img src="images/icons/white/user.png" alt="" title="" /></a>
+							</div>
+							<div class="swiper-slide toolbar-icon">
+								<a onclick="page_logged('novo_anuncio.html')"><img src="images/icons/white/add_anucios.png"></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Pacotes Popup -->
+	<div class="popup popup-pacotes">
+		<div class="content-block contactform">
+
+			<h4>PACOTES</h4>
+			<p>Escolha um pacote de anúncio:</p>
+
+			<form id="FormPacotes" onsubmit="submit_pacotes(this); return false">
+				<div class="list-block">
+					<ul class="lista-pacotes"></ul>
+				</div>
+				<input type="submit" class="form_submit" value="Publicar">
+			</form>
+
+			<div class="close_popup_button">
+				<a href="#" class="close-popup"><img src="images/icons/black/menu_close.png"></a>
+			</div>
+		</div>
+	</div>
+	<!-- Login Popup -->
+	<div class="popup popup-login">
+		<div class="content-block">
+			<h4>ENTRAR</h4>
+			<div class="loginform">
+				<form id="LoginForm" method="post" onsubmit="return false">
+					<input type="text" name="user" class="form_input required" placeholder="Usuário">
+					<input type="password" name="pass" class="form_input required" placeholder="Senha">
+					<input type="hidden" class="url_callback">
+					<div class="forgot_pass"><a href="#" data-popup=".popup-forgot" class="open-popup">Esqueceu sua Senha?</a></div>
+					<input type="submit" name="submit" class="form_submit" onclick="fazerlogin(this.parentElement)" value="ENTRAR">
+				</form>
+				<div class="signup_bottom">
+					<p>Não tem uma conta?</p>
+					<a href="#" data-popup=".popup-signup" class="open-popup">REGISTRAR</a>
+				</div>
+			</div>
+			<div class="close_popup_button">
+				<a href="#" class="close-popup"><img src="images/icons/black/menu_close.png"></a>
+			</div>
+		</div>
+	</div>
+	<!-- Register Popup -->
+	<div class="popup popup-signup">
+		<div class="content-block">
+			<h4>NOVO CADASTRO</h4>
+			<div class="loginform">
+				<form id="RegisterForm" method="post">
+					<input type="text" name="Username" class="form_input required" placeholder="Username">
+					<input type="text" name="Email" class="form_input required" placeholder="Email">
+					<input type="password" name="Password" class="form_input required" placeholder="Password">
+					<input type="submit" name="submit" class="form_submit" id="submit" value="REGISTRAR">
+				</form>
+				<!-- <h5>- Ou registar-se com uma conta SOCIAL -</h5>
+				<div class="signup_social">
+					<a href="http://www.facebook.com/" class="signup_facebook external">FACEBOOK</a>
+					<a href="http://www.twitter.com/" class="signup_twitter external">TWITTER</a>            
+				</div> -->
+			</div>
+			<div class="close_popup_button">
+				<a href="#" class="close-popup"><img src="images/icons/black/menu_close.png" alt="" title="" /></a>
+			</div>
+		</div>
+	</div>
+	<!-- Forgot Password Popup -->
+	<div class="popup popup-forgot">
+		<div class="content-block">
+			<h4>Recuperar Senha</h4>
+			<div class="loginform">
+				<form id="ForgotForm" method="post">
+					<input type="text" name="Email" value="" class="form_input required" placeholder="email" />
+					<input type="submit" name="submit" class="form_submit" id="submit" value="RECUPERAR SENHA" />
+				</form>
+				<div class="signup_bottom">
+					<p>Verifique se o seu e-mail e siga as instruções para ativar sua senha.</p>
+				</div>
+			</div>
+			<div class="close_popup_button">
+				<a href="#" class="close-popup"><img src="images/icons/black/menu_close.png" alt="" title="" /></a>
+			</div>
+		</div>
+	</div>
+	<!-- Social Icons Popup -->
+	<div class="popup popup-social">
+		<div class="content-block">
+			<h4>Compartilhar</h4>
+			<p>ícones de compartilhamento que permite compartilhar e aumentar a sua popularidade sociais.</p>
+			<ul class="social_share">
+				<li>
+					<a href="http://twitter.com/" class="external"><img src="images/icons/black/twitter.png" alt="" title="" /><span>TWITTER</span></a>
+				</li>
+				<li>
+					<a href="http://www.facebook.com/" class="external"><img src="images/icons/black/facebook.png" alt="" title="" /><span>FACEBOOK</span></a>
+				</li>
+				<li>
+					<a href="http://plus.google.com" class="external"><img src="images/icons/black/gplus.png" alt="" title="" /><span>GOOGLE</span></a>
+				</li>
+				<li>
+					<a href="http://www.dribbble.com/" class="external"><img src="images/icons/black/dribbble.png" alt="" title="" /><span>DRIBBBLE</span></a>
+				</li>
+				<li>
+					<a href="http://www.linkedin.com/" class="external"><img src="images/icons/black/linkedin.png" alt="" title="" /><span>LINKEDIN</span></a>
+				</li>
+				<li>
+					<a href="http://www.pinterest.com/" class="external"><img src="images/icons/black/pinterest.png" alt="" title="" /><span>PINTEREST</span></a>
+				</li>
+			</ul>
+			<div class="close_popup_button">
+				<a href="#" class="close-popup">
+				<img src="images/icons/black/menu_close.png" alt="" title="" />
+				</a>
+			</div>
+		</div>
+	</div>
+
+	<!-- Template para os fields de anúncios -->
+	<div id="template_post" class="template_app">
+		<li class="swipeout">
+			<div class="swipeout-content item-content">
+				<a href="ver_anuncios.html" class="anuncio_field">
+					<div class="post_entry">
+						<div class="post_thumb"></div>
+						<div class="post_details">
+							<p class="anuncio_titulo">Titulo</p>
+							<p class="anuncio_data">00/00/0000 às 00h</p>
+							<p class="anuncio_preco">Preço a combinar</p>
+						</div>
+						<div class="post_swipe"><img src="images/swipe_more.png" alt="" title="" /></div>
+					</div>
+				</a>
+			</div>
+			<div class="swipeout-actions-right">
+				<a href="ver_anuncios.html" class="action1">
+				<img src="images/icons/black/message.png" alt="" title="" />
+				</a>
+				<a href="#" class="action1 open-popup" data-popup=".popup-social">
+				<img src="images/icons/black/like.png" alt="" title="" />
+				</a>
+				<a href="#" class="action1 open-popup" data-popup=".popup-social">
+				<img src="images/icons/black/contact.png" alt="" title="" />
+				</a>
+			</div>
+		</li>
+	</div>
+
+	<!-- { Inicio javascript do cordova -->
+	<script type="text/javascript" src="cordova.js"></script>
+	<script type="text/javascript" src="js/app/index.js"></script>
+	<!-- Fim javascript do cordova } -->
+
+	<script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery.validate.min.js" ></script>
+	<script type="text/javascript" src="js/framework7.js"></script>
+	<script type="text/javascript" src="js/my-app.js"></script>
+	<script type="text/javascript" src="js/jquery.swipebox.js"></script>
+	<!-- <script type="text/javascript" src="js/jquery.fitvids.js"></script> -->
+	<script type="text/javascript" src="js/email.js"></script>
+	<script type="text/javascript" src="js/circlemenu.js"></script>
+	<!-- <script type="text/javascript" src="js/audio.min.js"></script> -->
+</body>
+</html>

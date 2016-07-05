@@ -1,0 +1,135 @@
+<div class="pages">
+	<div data-page="novoanuncio" class="page no-toolbar no-navbar">
+		<div class="page-content">
+			<div class="navbarpages nobg">
+				<!-- <a href="#" onclick="app.voltar()"> -->
+				<a href="anuncios.html" class="back">
+					<div class="botao_voltar navbar_left">
+						<img src="images/icons/white/back.png" alt="" title="">
+					</div>
+				</a>
+				<a href="#" data-panel="right" class="open-panel">
+					<div class="navbar_right"><img src="images/icons/white/user.png"></div>
+				</a>
+			</div>
+			<!--INICIO DO FORM NOVO ANUNCIO-->
+			<div id="pages_maincontent">
+				<div class="page_single layout_fullwidth_padding">
+					<div class="contactform">
+						<form class="novo_anuncio" method="post" enctype="multipart/form-data" onsubmit="submit_anuncio(this); return false">
+
+							<div class="adicionar_imagens">
+								
+								<ul class="lista_imagens"></ul>
+
+								<button class="capturar_foto" id="capturar_foto" onclick="app.capturarFoto(this); return false">
+									<strong>ADICIONAR IMAGENS</strong>
+								</button>
+							</div>
+
+							<div class="form_row"> 
+								<label>Título: *</label>
+								<input type="text" name="directory_title" class="form_input" placeholder="Título do anúncio" required>
+							</div>
+
+							<div class="form_row"> 
+								<label>Descrição:</label>
+								<textarea name="directory_content" class="form_textarea" rows="" placeholder="Descrição do anúncio"></textarea>
+							</div>
+							<div class="form_row"> 
+								<label>Preço:</label>
+								<input type="text" name="dir_cusotm_field[dynamic_post_sale_newprice]" class="form_input" onkeyup="moeda(this)" placeholder="R$">
+							</div>
+							<div class="form_row">
+								<label>Tipo de Anúncio: *</label>
+								<select name="dir[directory_type_select]" id="newAdType" class="form_select" required></select>
+							</div>
+							<div class="form_row">
+								<label>Categoria do Anúncio: *</label>
+								<select name="directory_categories[]" id="newAdCateg" class="form_select" required></select>
+							</div>
+							<div class="form_row">
+								<label>Estado: *</label>
+								<select name="dir_cusotm_field[dynamic_post_location_region]" id="newAdState" class="form_select" required></select>
+							</div>
+							<div class="form_row">
+								<label>Cidade: *</label>
+								<select name="dir_cusotm_field[dynamic_post_location_city]" id="newAdCity" class="form_select" required></select>
+							</div>
+							<div class="template_app" id="detalhes_anuncio">
+								<div class="accordion-item-toggle">
+									<label>Detalhes: *</label>
+									<button type="button" class="anuncio_btn_detalhes">Detalhes do anúncio</button>
+								</div>
+								<div class="accordion-item-content">
+									<div class="form_row_right"></div>
+								</div>
+							</div>
+							<div class="template_app" id="lista_destaque">
+								<label>Lista de Destaque</label>
+								<div class="form_row_right"></div>
+							</div>
+
+							<!-- <div class="form_row">
+								<label>Ativar: Exemplo</label>
+								<div class="form_row_right">
+									<div class="item-content">
+										<div class="item-inner">
+											<div class="item-title">On/Off</div>
+											<div class="item-input">
+												<label class="label-switch">
+													<input type="checkbox">
+													<div class="checkbox"></div>
+												</label>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div> -->
+							<input type="hidden" name="_wp_http_referer" value="/painel/?action=add-directory">
+							<input type="hidden" name="dir[directory_type_price]" value="0">
+							<input type="hidden" name="dir_cusotm_field[dynamic_post_sale_oldprice]" value="">
+							<input type="hidden" name="dir_cusotm_field[dynamic_post_sale_price_call]" value="">
+							<input type="hidden" name="dir_cusotm_field[dynamic_post_location_country]" value="brasil">
+							<input type="hidden" name="dir_cusotm_field[dynamic_post_location_complete_address]" value="">
+							<input type="hidden" name="dir_cusotm_field[dynamic_post_location_address]" value="">
+							<input type="hidden" name="dir_cusotm_field[dynamic_post_location_latitude]" value="">
+							<input type="hidden" name="dir_cusotm_field[dynamic_post_location_longitude]" value="">
+							<input id="ad_location" type="hidden" name="dir_cusotm_field[add_new_loc]" value="">
+							<input type="hidden" name="dir_cusotm_field[dynamic_post_location_zoom]" value="13">
+							<input type="hidden" name="multi_tags_option_allow" value="on">
+							<input type="hidden" name="multi_tags_allow_no" value="10">
+							<input type="hidden" name="directory_image_gallery" value="">
+							<input type="hidden" name="directory_tags" value="">
+							<input type="hidden" name="dir_cusotm_field[user_landline]" value="">
+							<input type="hidden" name="dir_cusotm_field[user_mobile]" value="">
+							<input type="hidden" name="dir_cusotm_field[user_email]" value="">
+							<input type="hidden" name="dir_cusotm_field[user_website]" value="">
+							<input type="hidden" name="dir_cusotm_field[cs_directory_pkg_names]" value="0000000000">
+							<input type="hidden" name="dir_cusotm_field[directory_featured]" value="no">
+							<input type="hidden" name="cs_payment_gateway" value="cs_paypal_gateway">
+							<input type="hidden" name="cs_directory_terms_conditions" value="on">
+							<input type="hidden" name="cs_directory_submit" value="yes">
+							<input id="quantidade_img" type="hidden" name="total_attchments_counter" value="0">
+							<input id="url_tema" type="hidden" name="cs_uri" value="">
+							<input id="user_id" type="hidden" name="directory_organizer" value="">
+							<input type="hidden" name="directory_action" value="insert">
+
+							<input type="submit" class="form_submit" id="submit" value="Avançar">
+						</form>
+					</div>
+
+					<div id="template_pacotes" class="template_app">
+						<label class="label-radio item-content">
+							<input type="radio" name="radio_pacote">
+							<div class="item-inner">
+								<div class="item-title"></div>
+							</div>
+						</label>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

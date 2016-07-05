@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        window.onload = function() {
+			var $_GET = {};
+
+            document.location.search.replace(/\??(?:([^=]+)=([^&]*)&?)/g, function () {
+                function decode(s) {
+                    return decodeURIComponent(s.split("+").join(" "));
+                }
+
+                $_GET[decode(arguments[1])] = decode(arguments[2]);
+            });
+
+            document.getElementById('price').value = $_GET['price']; // preco
+            document.getElementById('item_name').value = $_GET['name']; // Título
+            document.getElementById('item_number').value = $_GET['id']; // Post id
+            document.getElementById('custom').value = $_GET['uid'] +"_"+ $_GET['pack'] +"_"+ $_GET['featured']; // custom
+
+            document.getElementById('direcotry-paypal-form').submit();
+        };
+
+    </script>
+</head>
+<body>
+<form name="PayPalForm" id="direcotry-paypal-form" action="https://www.paypal.com/br/cgi-bin/webscr" method="post">
+    <input type="hidden" name="cmd" value="_xclick">
+    <input type="hidden" name="business" value="contato@negociosfechados.com">
+    <input type="hidden" id="price" name="amount" value="">
+    <input type="hidden" id="item_name" name="item_name" value="">
+    <input type="hidden" name="currency_code" value="BRL">
+    <input type="hidden" id="item_number" name="item_number" value="">
+    <input name="cancel_return" value="#" type="hidden">
+    <input type="hidden" name="no_note" value="1">
+    <input type="hidden" name="notify_url" value="http://negociosfechados.com/wp-content/plugins/wp-directory/payment-gateway/listner.php">
+    <input type="hidden" name="lc">
+    <input type="hidden" name="rm" value="2">
+    <input type="hidden" id="custom" name="custom" value="">
+    <input type="hidden" name="return" value="#">
+</form>
+</body>
+</html>
